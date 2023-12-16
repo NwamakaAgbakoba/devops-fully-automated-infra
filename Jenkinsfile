@@ -12,7 +12,6 @@ pipeline {
                 echo 'Cloning project codebase...'
                 git branch: 'main', url: 'https://github.com/NwamakaAgbakoba/devops-fully-automated-infra.git'
                 sh 'ls'
-                sh 'pwd'
             }
         }
         
@@ -82,13 +81,13 @@ pipeline {
             }
         }
         
-        // stage('Terraform destroy') {
-        //     steps {
-        //         echo 'Terraform destroy...'                             
-        //         sh 'sudo terraform destroy --auto-approve'
+        stage('Terraform destroy') {
+            steps {
+                echo 'Terraform destroy...'                             
+                sh 'sudo terraform destroy --auto-approve'
                
-        //     }
-        // }
+            }
+        }
         
     }
     
